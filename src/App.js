@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component {
+  //Something to hold the weather data
+  state = {
+    weatherData: []
+  };
 
+  getWeatherData = async() =>{
+    var url =
+      "http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=faa738d76a8ffaa97bfcdfd989c9eb41";
+
+    var response = await fetch(url);
+
+    var json = await response.json();
+
+    //Adding the json object to the weather data array
+    this.setState({
+        weatherData:[...this.state.weatherData, json]
+    })
+  }
+  componentDidMount = () => {
+
+    setTimeout(this.getWeatherData, 10);
+
+  };
+
+  render() {
+    var {weatherData} = this.state;
+    return <div className = "appHeader"></div>;
+  }
+}
 export default App;
