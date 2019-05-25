@@ -4,7 +4,8 @@ import './App.css';
 class App extends React.Component {
   //Something to hold the weather data
   state = {
-    weatherData: []
+    weatherData: [],
+    weatherName: ""
   };
 
   getWeatherData = async() =>{
@@ -17,18 +18,18 @@ class App extends React.Component {
 
     //Adding the json object to the weather data array
     this.setState({
-        weatherData:[...this.state.weatherData, json]
+        weatherData: json.weather, weatherName: json.name
     })
   }
   componentDidMount = () => {
 
     setTimeout(this.getWeatherData, 10);
-
+    console.log(this.state.weatherData);
   };
 
   render() {
-    var {weatherData} = this.state;
-    return <div className = "appHeader"></div>;
+    var {weatherData,weatherName} = this.state;
+    return <div className = "appHeader">{weatherData.map((weather) => <div key = {1}>{weatherName} {weather.description}</div>)}</div>;
   }
 }
 export default App;
