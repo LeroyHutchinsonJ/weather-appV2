@@ -23,7 +23,7 @@ Temp: 0
 
   //Set a timer with componentDidMount
    componentDidMount = () =>{
-     setTimeout(this.getTemp, 200);
+     setTimeout(this.getTemp, 50);
    }
   render(){
     var {Temp} = this.state;

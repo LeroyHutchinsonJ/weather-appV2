@@ -27,7 +27,7 @@ class Icon extends React.Component{
   }
 
   componentDidMount = () =>{
-    setTimeout(this.getIcon, 200);
+    setTimeout(this.getIcon, 50);
   }
   render(){
       var {Weather,Icon} = this.state;
