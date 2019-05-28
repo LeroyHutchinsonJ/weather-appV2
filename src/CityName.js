@@ -19,7 +19,7 @@ class CityName extends React.Component{
     this.setState({Name:json.name})
   }
   componentDidMount = () =>{
-    setTimeout(this.getName, 50);
+    this.getName();
   }
 
   render(){

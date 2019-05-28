@@ -27,11 +27,12 @@ class Icon extends React.Component{
   }
 
   componentDidMount = () =>{
-    setTimeout(this.getIcon, 50);
+    this.getIcon();
   }
   render(){
       var {Weather,Icon} = this.state;
-    return(<div>{Icon}</div>)
+      var img = "http://openweathermap.org/img/w/01n.png"
+    return(<img src = {`http://openweathermap.org/img/w/${Icon}.png`}></img>)
   }
 }
 
