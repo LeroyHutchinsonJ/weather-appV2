@@ -7,7 +7,7 @@ class CityName extends React.Component{
   }
   getName = async() =>{
     //put url in a variable
-    var url = "http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=faa738d76a8ffaa97bfcdfd989c9eb41";
+    var url = "http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=faa738d76a8ffaa97bfcdfd989c9eb41&units=imperial";
 
     //fetch the data from the url
     var response = await fetch(url);

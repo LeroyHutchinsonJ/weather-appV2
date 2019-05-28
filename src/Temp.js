@@ -9,7 +9,7 @@ Temp: 0
   getTemp = async() =>{
     //Put the url in a variable
     var url =
-      "http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=faa738d76a8ffaa97bfcdfd989c9eb41";
+      "http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=faa738d76a8ffaa97bfcdfd989c9eb41&units=imperial";
 
     //Use fetch to get the information from the url
     var response = await fetch(url);
