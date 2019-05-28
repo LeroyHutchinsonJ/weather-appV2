@@ -31,8 +31,34 @@ class Icon extends React.Component{
   }
   render(){
       var {Weather,Icon} = this.state;
-      var img = "http://openweathermap.org/img/w/01n.png"
-    return(<img src = {`http://openweathermap.org/img/w/${Icon}.png`}></img>)
+      var weatherTrack = 0;
+      var weatherHold = "";
+
+      //This sets each value of the weather to a numeric number
+      if(Icon==="01d")
+      {
+        weatherTrack = 1;
+      }
+      if(Icon==="01n")
+      {
+        weatherTrack = 2;
+      }
+
+
+      //this uses the numeric number to pick out the picture that each weather pattern will have
+    switch(weatherTrack)
+    {
+      case 1:
+      weatherHold ="fas fa-sun";
+      break;
+      case 2:
+      weatherHold ="fas fa-moon";
+      break;
+    }
+
+
+
+    return(<i className = {weatherHold}></i>)
   }
 }
 
