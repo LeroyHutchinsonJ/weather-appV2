@@ -27,7 +27,7 @@ Temp: 0
    }
   render(){
     var {Temp} = this.state;
-    return(<div>{Temp}</div>)
+    return(<div className = "temp">{Temp}</div>)
   }
 }
 
