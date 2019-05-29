@@ -2,6 +2,7 @@ import React from 'react';
 import Temp from "./Temp";
 import CityName from "./CityName";
 import Icon from "./Icon";
+import "./App.css"
 class App extends React.Component {
 
   render() {

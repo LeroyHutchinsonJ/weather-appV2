@@ -24,7 +24,7 @@ class CityName extends React.Component{
 
   render(){
     var {Name} = this.state;
-    return(<div>{Name}</div>)
+    return(<div className ="cityName">{Name}</div>)
   }
 }
 
