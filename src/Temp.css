@@ -1,8 +1,5 @@
 .temp{
 font-size: 1000%;
-position: relative;
-
-}
-html{
-  position:fixed;
+border: 1px solid white;
+color: #f5f6fa;
 }
