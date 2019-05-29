@@ -122,72 +122,72 @@ class Icon extends React.Component{
     switch(weatherTrack)
     {
       case 1:
-      weatherHold ="fas fa-sun";
+      weatherHold ="fas fa-sun fa-10x";
       break;
       case 2:
-      weatherHold ="fas fa-moon";
+      weatherHold ="fas fa-moon fa-10x";
       break;
 
       case 3:
-      weatherHold ="fas fa-cloud-sun";
+      weatherHold ="fas fa-cloud-sun fa-10x";
       break;
       case 4:
-      weatherHold ="fas fa-cloud-moon";
+      weatherHold ="fas fa-cloud-moon fa-10x";
       break;
 
       case 5:
-      weatherHold ="fas fa-cloud";
+      weatherHold ="fas fa-cloud fa-10x";
       break;
       case 6:
-      weatherHold ="fas fa-cloud";
+      weatherHold ="fas fa-cloud fa-10x";
       break;
 
       case 7:
-      weatherHold ="fas fa-cloud-meatball";
+      weatherHold ="fas fa-cloud-meatball fa-10x";
       break;
       case 8:
-      weatherHold ="fas fa-cloud-meatball";
+      weatherHold ="fas fa-cloud-meatball fa-10x";
       break;
 
       case 9:
-      weatherHold ="fas fa-cloud-showers-heavy";
+      weatherHold ="fas fa-cloud-showers-heavy fa-10x";
       break;
       case 10:
-      weatherHold ="fas fa-cloud-showers-heavy";
+      weatherHold ="fas fa-cloud-showers-heavy fa-10x";
       break;
 
       case 11:
-      weatherHold ="fas fa-cloud-rain";
+      weatherHold ="fas fa-cloud-rain fa-10x";
       break;
       case 12:
-      weatherHold ="fas fa-cloud-rain";
+      weatherHold ="fas fa-cloud-rain fa-10x";
       break;
 
       case 13:
-      weatherHold ="fas fa-bolt";
+      weatherHold ="fas fa-bolt fa-10x";
       break;
       case 14:
-      weatherHold ="fas fa-bolt";
+      weatherHold ="fas fa-bolt fa-10x";
       break;
 
       case 15:
-      weatherHold ="fas fa-snowflake";
+      weatherHold ="fas fa-snowflake fa-10x";
       break;
       case 16:
-      weatherHold ="fas fa-snowflake";
+      weatherHold ="fas fa-snowflake fa-10x";
       break;
 
       case 17:
-      weatherHold ="fas fa-smog";
+      weatherHold ="fas fa-smog fa-10x";
       break;
       case 18:
-      weatherHold ="fas fa-smog";
+      weatherHold ="fas fa-smog fa-10x";
       break;
     }
 
 
 
-    return(<i className = {weatherHold}></i>)
+    return(<i className = "fas fa-cloud-sun-rain fa-10x"></i>)
   }
 }
 

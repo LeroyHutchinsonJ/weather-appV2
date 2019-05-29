@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Temp from "./Temp";
 import CityName from "./CityName";
 import Icon from "./Icon";
