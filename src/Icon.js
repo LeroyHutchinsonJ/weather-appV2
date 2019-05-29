@@ -30,7 +30,7 @@ class Icon extends React.Component{
     this.getIcon();
   }
   render(){
-      var {Weather,Icon} = this.state;
+      var {Icon} = this.state;
       var weatherTrack = 0;
       var weatherHold = "";
 
@@ -71,47 +71,47 @@ class Icon extends React.Component{
         weatherTrack = 8;
       }
 
-      if(Icon==="05d")
+      if(Icon==="09d")
       {
         weatherTrack = 9;
       }
-      if(Icon==="05n")
+      if(Icon==="09n")
       {
         weatherTrack = 10;
       }
 
-      if(Icon==="06d")
+      if(Icon==="10d")
       {
         weatherTrack = 11;
       }
-      if(Icon==="06n")
+      if(Icon==="10n")
       {
         weatherTrack = 12;
       }
 
-      if(Icon==="07d")
+      if(Icon==="11d")
       {
         weatherTrack = 13;
       }
-      if(Icon==="07n")
+      if(Icon==="11n")
       {
         weatherTrack = 14;
       }
 
-      if(Icon==="08d")
+      if(Icon==="13d")
       {
         weatherTrack = 15;
       }
-      if(Icon==="08n")
+      if(Icon==="13n")
       {
         weatherTrack = 16;
       }
 
-      if(Icon==="09n")
+      if(Icon==="50n")
       {
         weatherTrack = 17;
       }
-      if(Icon==="09d")
+      if(Icon==="50d")
       {
         weatherTrack = 18;
       }
