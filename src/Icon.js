@@ -3,7 +3,6 @@ import './Icon.css'
 
 class Icon extends React.Component{
   state = {
-    Weather:[],
     Icon:""
   }
 
@@ -12,7 +11,7 @@ class Icon extends React.Component{
   getIcon = async() =>{
     //Put the url in a variable
     var url =
-      "http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=faa738d76a8ffaa97bfcdfd989c9eb41&units=imperial";
+      "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/2a92bc59e2d13645bab00453d987b25d/40.647208899999995,-73.9512852";
 
     //Use fetch to get the information from the url
     var response = await fetch(url);
@@ -20,10 +19,7 @@ class Icon extends React.Component{
     //Use json.() to turn the fetched data into json
     var json = await response.json();
 
-    //Set the data to temp
-    await this.setState({Weather:json.weather});
-
-    this.setState({Icon: this.state.Weather[0].icon})
+      this.setState({ Icon: json.currently.icon });
   }
 
   componentDidMount = () =>{
@@ -35,159 +31,88 @@ class Icon extends React.Component{
       var weatherHold = "";
 
       //This sets each value of the weather to a numeric number
-      if(Icon==="01d")
+      if(Icon==="clear-day")
       {
         weatherTrack = 1;
       }
-      if(Icon==="01n")
+      if(Icon==="clear-night")
       {
         weatherTrack = 2;
       }
 
-      if(Icon==="02d")
+      if(Icon==="partly-cloudy-day")
       {
         weatherTrack = 3;
       }
-      if(Icon==="02n")
+      if(Icon==="partly-cloudy-night")
       {
         weatherTrack = 4;
       }
 
-      if(Icon==="03d")
+      if(Icon==="cloudy")
       {
         weatherTrack = 5;
       }
-      if(Icon==="03n")
+      if(Icon==="rain")
       {
         weatherTrack = 6;
-      }
-
-      if(Icon==="04d")
+      }    
+      if(Icon==="thunderstorm")
       {
         weatherTrack = 7;
       }
-      if(Icon==="04n")
+      if(Icon==="snow")
       {
         weatherTrack = 8;
       }
-
-      if(Icon==="09d")
+      if(Icon==="fog")
       {
         weatherTrack = 9;
       }
-      if(Icon==="09n")
-      {
-        weatherTrack = 10;
-      }
-
-      if(Icon==="10d")
-      {
-        weatherTrack = 11;
-      }
-      if(Icon==="10n")
-      {
-        weatherTrack = 12;
-      }
-
-      if(Icon==="11d")
-      {
-        weatherTrack = 13;
-      }
-      if(Icon==="11n")
-      {
-        weatherTrack = 14;
-      }
-
-      if(Icon==="13d")
-      {
-        weatherTrack = 15;
-      }
-      if(Icon==="13n")
-      {
-        weatherTrack = 16;
-      }
-
-      if(Icon==="50n")
-      {
-        weatherTrack = 17;
-      }
-      if(Icon==="50d")
-      {
-        weatherTrack = 18;
-      }
-
-
-
-      //this uses the numeric number to pick out the picture that each weather pattern will have
+    
+    //this uses the numeric number to pick out the picture that each weather pattern will have
     switch(weatherTrack)
     {
       case 1:
       weatherHold ="fas fa-sun fa-10x";
-      break;
+            break;
+
       case 2:
       weatherHold ="fas fa-moon fa-10x";
-      break;
+            break;
 
       case 3:
       weatherHold ="fas fa-cloud-sun fa-10x";
-      break;
+            break;
+
       case 4:
       weatherHold ="fas fa-cloud-moon fa-10x";
-      break;
+            break;
 
       case 5:
       weatherHold ="fas fa-cloud fa-10x";
-      break;
+            break;
+
       case 6:
-      weatherHold ="fas fa-cloud fa-10x";
-      break;
+      weatherHold ="fas fa-cloud-showers-heavy fa-10x";
+            break;
 
       case 7:
-      weatherHold ="fas fa-cloud-meatball fa-10x";
-      break;
+      weatherHold ="fas fa-bolt fa-10x";
+            break;
+
       case 8:
-      weatherHold ="fas fa-cloud-meatball fa-10x";
-      break;
+      weatherHold ="fas fa-snowflake fa-10x";
+            break;
 
       case 9:
-      weatherHold ="fas fa-cloud-showers-heavy fa-10x";
-      break;
-      case 10:
-      weatherHold ="fas fa-cloud-showers-heavy fa-10x";
-      break;
-
-      case 11:
-      weatherHold ="fas fa-cloud-rain fa-10x";
-      break;
-      case 12:
-      weatherHold ="fas fa-cloud-rain fa-10x";
-      break;
-
-      case 13:
-      weatherHold ="fas fa-bolt fa-10x";
-      break;
-      case 14:
-      weatherHold ="fas fa-bolt fa-10x";
-      break;
-
-      case 15:
-      weatherHold ="fas fa-snowflake fa-10x";
-      break;
-      case 16:
-      weatherHold ="fas fa-snowflake fa-10x";
-      break;
-
-      case 17:
       weatherHold ="fas fa-smog fa-10x";
-      break;
-      case 18:
-      weatherHold ="fas fa-smog fa-10x";
-      break;
+            break;
     }
 
 
 
-    return(<i className = "fas fa-cloud-sun-rain fa-10x"></i>)
+      return (<i className={weatherHold}></i>)
   }
 }
 
